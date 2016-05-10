@@ -10,6 +10,7 @@ public class HomeController
    @RequestMapping("/")
    public String index()
    {
+	   System.out.println("acessando a home");
       return "index";
    }
 }
