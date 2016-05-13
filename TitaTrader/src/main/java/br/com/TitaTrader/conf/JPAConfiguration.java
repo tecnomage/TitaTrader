@@ -64,6 +64,7 @@ public class JPAConfiguration
    Properties additionalProperties()
    {
       Properties properties = new Properties();
+      properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
       properties.setProperty("hibernate.hbm2ddl.auto", "update");
       properties.setProperty("hibernate.show_sql", "true");
       return properties;
