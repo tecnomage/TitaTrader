@@ -1,3 +1,4 @@
+package br.com.TitaTrader.daos;
 //package br.com.TitaTrader.daos;
 //
 //import java.util.List;
