@@ -20,9 +20,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-		System.out.println("acessando o CDsERVLET Handeling");
 		configurer.enable();
-	}
+	};
 
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {

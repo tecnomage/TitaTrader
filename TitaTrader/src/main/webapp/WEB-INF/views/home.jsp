@@ -13,8 +13,8 @@
 
     <!-- Bootstrap -->
  							  
-    <link  rel="stylesheet"  href="${contextPath}resources/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="${contextPath}resources/css/bootstrap-theme.min.css" >
+    <link  rel="stylesheet"  href="${contextPath}assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="${contextPath}assets/css/bootstrap-theme.min.css" >
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,5 +76,5 @@
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-       <script src="resources/js/bootstrap.min.js" ></script>
+       <script src="assets/js/bootstrap.min.js" ></script>
   </body>
