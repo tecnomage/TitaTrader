@@ -15,6 +15,16 @@
  							  
     <link  rel="stylesheet"  href="${contextPath}assets/css/bootstrap.min.css" >
     <link rel="stylesheet" href="${contextPath}assets/css/bootstrap-theme.min.css" >
+    <style>
+  body {
+        padding-top: 60px;
+      }
+      @media (max-width: 980px) {
+        body {
+            padding-top: 0;
+            }
+        }
+</style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,9 +40,9 @@
          <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="icon-bar">opcao 1</span>
+            <span class="icon-bar">opcao 2</span>
+            <span class="icon-bar">opcao 3</span>
           </button>
           <a class="navbar-brand" href="#">Project name</a>
         </div>
@@ -63,10 +73,10 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container"/>
 
-      <div class="starter-template">
-        <h1>Seu Home Trader TOpado</h1>
+      <div class="starter-template" >
+        <h1  style="padding-down:5px;">Seu Home Trader TOpado</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
 
