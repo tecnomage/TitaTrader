@@ -2,16 +2,19 @@ package br.com.TitaTrader.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController
 {
 
-	//TODO colocar o css bootstrap na home
-   @RequestMapping("/")
-   public String index()
+	@RequestMapping("/")
+   public ModelAndView index()
    {
+	   
+	   ModelAndView modelAndView = new ModelAndView("home");
+	   
 	   System.out.println("acessando a home");
-      return "home";
+      return modelAndView;
    }
 }
