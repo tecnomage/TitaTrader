@@ -1,3 +1,4 @@
+
   <%@ page language="java" contentType="text/html; charset=UTF-8"
             pageEncoding="UTF-8"%>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -48,7 +49,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
+                    <li class="active"><a href="/TitaTrader/">Home</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="dropdown">
