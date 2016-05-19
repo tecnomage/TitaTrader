@@ -10,7 +10,8 @@ public class AcaoController {
 	
 	@RequestMapping("/listar")
 	public String lista() {
-		return "listar";
+		System.out.println("acessando novo listar");
+		return "acao/listar";
 	}
 	
 	@RequestMapping("/form")
