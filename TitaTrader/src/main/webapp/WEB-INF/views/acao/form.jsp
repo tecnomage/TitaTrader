@@ -12,94 +12,62 @@
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
 <link rel="stylesheet" href="${cssPath}/bootstrap-theme.min">
 
-<style type="text/css">
-body {
-	padding: 60px;
-}
-</style>
+<!-- header -->
+<%@include file="/WEB-INF/views/templates/header.jsp"%>
+
+<body>
+<div class="container">
+  <h2>Cadastro de Ações</h2>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Nome:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="nome" placeholder="Nome da Ação">
+      </div>
+      
+      <label class="control-label col-sm-2" for="observacoes">Observações:</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" id="observacoes" placeholder="Observações">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox"> Remember me</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="checkbox">
+  <label>
+    <input type="checkbox" value="ativa">
+    Ação ativa
+  </label>
+</div>
+<div class="checkbox disabled">
+  <label>
+    <input type="checkbox" value="" disabled>
+    Option two is disabled
+  </label>
+</div>
+</body>
+
 
 <!--<script src="resources/js/bootstrap.min.js"></script>-->
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<!-- footer -->
+  <%@include file="/WEB-INF/views/templates/footer.jsp"%>
 
 
-<title>Livros da casa do Código</title>
-</head>
-<body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Casa do Código</a>
-				<ul>
-			<li><a href="${s:mvcUrl('PC#listar').build() }">Listagem de	Produtos</a></li>
-			<li> <a href="${s:mvcUrl('PC#form').build() }">Cadastro de Produtos</a></li>
-			</ul>
-		</div>
-	</div>
-	</nav>
-
-
-
-	<form:form action="${s:mvcUrl('PC#gravar').build()}" method="POST"
-		commandName="produto" enctype="multipart/form-data">
-		<div class="form-group">
-			<label>Título</label>
-			<form:errors path="titulo" />
-			<form:input type="text" path="titulo" cssClass="form-control" />
-		</div>
-
-		<div class="form-group">
-			<label>Descrição</label>
-			<form:errors path="descricao" />
-			<form:textarea rows="10" cols="20" path="descricao"
-				cssClass="form-control" />
-
-		</div>
-
-		<div class="form-group">
-			<label>Paginas</label>
-			<form:input type="text" path="paginas" cssClass="form-control" />
-			<form:errors path="paginas" />
-		</div>
-
-		<div class="form-group">
-			<label>Data de lançamento</label>
-			<form:input path="dataLancamento" cssClass="form-control" />
-			<form:errors path="dataLancamento" />
-		</div>
-
-		<!-- esse tipos vem de produto controller -->
-		<!-- o binding é feito pelo modelAndView -->
-		<!-- o foreach tem essa Varstatus que permite manter um índice -->
-		<c:forEach items="${tipos}" var="tipoPreco" varStatus="status">
-			<div>
-				<label>${tipoPreco}</label>
-				<!--aqui é feito o BINDING com a classe produto  -->
-				<!--  que tem a List<preco> preços -->
-				<input type="text" name="precos[${status.index}].valor">
-				<!--  valor do preço -->
-				<!--seta o preço com base no private TipoPreco tipo; no índice certo -->
-				<input type="hidden" name="precos[${status.index}].tipoPreco"
-					value="${tipoPreco}">
-				<!-- tipo do preço; Ebook,impresso,combo -->
-		</c:forEach>
-
-		<div>
-			<label>Súmario</label> <input type="file" name="sumario"
-				class="form-control" />
-
-		</div>
-
-		<button type="submit" class="btn btn-primary">Cadastrar</button>
-	</form:form>
-	</div>
-</body>
-</html>
