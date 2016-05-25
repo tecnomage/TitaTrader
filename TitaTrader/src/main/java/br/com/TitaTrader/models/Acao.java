@@ -15,7 +15,8 @@ public class Acao
    private Integer id;
    private String name;
    private String description;
-
+   private Double preco;
+   
    public Integer getId()
    {
       return this.id;
@@ -45,4 +46,12 @@ public class Acao
    {
       this.description = description;
    }
+
+public Double getPreco() {
+	return preco;
+}
+
+public void setPreco(Double preco) {
+	this.preco = preco;
+}
 }

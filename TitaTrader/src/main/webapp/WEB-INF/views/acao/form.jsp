@@ -43,7 +43,7 @@
 				<label class="control-label col-sm-2" for="pwd">Preço de
 					Compra:</label>
 				<div class="col-sm-5">
-					<input type="password" class="form-control" id="pwd"
+					<input type="number" class="form-control" id="preco"
 						placeholder="Informe o preço de compra">
 				</div>
 			</div>
