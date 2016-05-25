@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import java.math.BigDecimal;
-import br.com.TitaTrader.models.Acoes;
+import br.com.TitaTrader.models.Acao;
 
 @Entity
 public class Trader {
@@ -19,7 +19,7 @@ public class Trader {
 	private String description;
 
 	@ManyToOne
-	private Acoes acoes;
+	private Acao acoes;
 
 	public Integer getId() {
 		return this.id;
