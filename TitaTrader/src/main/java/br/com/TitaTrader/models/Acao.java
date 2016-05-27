@@ -6,6 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+
+import br.com.TitaTrader.controllers.AcaoController;
+
+
 @Entity
 public class Acao
 {
@@ -13,9 +19,11 @@ public class Acao
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Integer id;
-   private String name;
-   private String description;
+   private String nome;
+   private String observacoes;
    private Double preco;
+   
+ 
    
    public Integer getId()
    {
@@ -27,24 +35,24 @@ public class Acao
       this.id = id;
    }
 
-   public String getName()
+   public String getNome()
    {
-      return this.name;
+      return this.nome;
    }
 
-   public void setName(String name)
+   public void setNome(String nome)
    {
-      this.name = name;
+      this.nome = nome;
    }
 
    public String getDescription()
    {
-      return this.description;
+      return this.observacoes;
    }
 
-   public void setDescription(String description)
+   public void setObservacoes(String observacoes)
    {
-      this.description = description;
+      this.observacoes = observacoes;
    }
 
 public Double getPreco() {

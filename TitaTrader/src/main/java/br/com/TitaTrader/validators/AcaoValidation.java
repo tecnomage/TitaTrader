@@ -8,11 +8,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-
-public class AcaoValidator {
-
-
-public class ProdutoValidation implements Validator {
+public class AcaoValidation implements Validator {
 
 	public void valida(Acao acao, Errors errors) {
 		ValidationUtils.rejectIfEmpty(errors, "nome", "field.required");
@@ -40,4 +36,3 @@ public class ProdutoValidation implements Validator {
 
 }
 
-}

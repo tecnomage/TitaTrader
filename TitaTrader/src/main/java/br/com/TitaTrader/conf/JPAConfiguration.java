@@ -25,7 +25,7 @@ public class JPAConfiguration
    @Bean
    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource)
    {
-      LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+	  LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
       em.setDataSource(dataSource);
       em.setPackagesToScan(new String[] { "br.com.TitaTrader.models" });
 
@@ -41,7 +41,7 @@ public class JPAConfiguration
    {
       DriverManagerDataSource dataSource = new DriverManagerDataSource();
       dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-      dataSource.setUrl("jdbc:mysql://localhost/TitaTrader");
+      dataSource.setUrl("jdbc:mysql://localhost:3306/TitaTrader");
       dataSource.setUsername("root");
 //      dataSource.setPassword("your password here");
       return dataSource;
@@ -61,10 +61,12 @@ public class JPAConfiguration
       return new PersistenceExceptionTranslationPostProcessor();
    }
 
+   @Bean
    Properties additionalProperties()
    {
       Properties properties = new Properties();
-      properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQLDialect");
+          
+      properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5InnoDBDialect");
       properties.setProperty("hibernate.hbm2ddl.auto", "update");
       properties.setProperty("hibernate.show_sql", "true");
       return properties;

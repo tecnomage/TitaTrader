@@ -21,20 +21,21 @@
 		<h2>Cadastro de Ações</h2>
 		
 		
-		<form:form class="form-horizontal" role="form" action="${s:mvcUrl('AC#gravar').build()}">
+		<form:form class="form-horizontal" role="form" action="${s:mvcUrl('AC#gravar').build()}"
+		method="POST" commandName="acao" enctype="multipart/form-data">
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="email">Nome:</label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" id="nome"
-						placeholder="Nome da Ação">
+					<form:input type="text" class="form-control" path="nome"
+						placeholder="Nome da Ação"/>
 				</div>
 			</div>
 			
 			<div class="form-group">
 			<label class="control-label col-sm-2" for="observacoes">Observações:</label>
 			<div class="col-sm-5">
-				<input type="text" class="form-control" id="observacoes"
-					placeholder="Observações">
+				<form:input type="text" class="form-control" path="observacoes"
+					placeholder="Observações"/>
 			</div>
 			</div>
 			
