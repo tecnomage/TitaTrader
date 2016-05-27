@@ -11,55 +11,49 @@ import org.springframework.web.bind.annotation.InitBinder;
 
 import br.com.TitaTrader.controllers.AcaoController;
 
-
 @Entity
-public class Acao
-{
+public class Acao {
 
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Integer id;
-   private String nome;
-   private String observacoes;
-   private Double preco;
-   
- 
-   
-   public Integer getId()
-   {
-      return this.id;
-   }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String nome;
+	private String observacoes;
+	private Double preco;
 
-   public void setId(Integer id)
-   {
-      this.id = id;
-   }
+		public Integer getId() {
+		return this.id;
+	}
 
-   public String getNome()
-   {
-      return this.nome;
-   }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-   public void setNome(String nome)
-   {
-      this.nome = nome;
-   }
+	public String getNome() {
+		return this.nome;
+	}
 
-   public String getDescription()
-   {
-      return this.observacoes;
-   }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-   public void setObservacoes(String observacoes)
-   {
-      this.observacoes = observacoes;
-   }
+	public String getDescription() {
+		return this.observacoes;
+	}
 
-public Double getPreco() {
-	return preco;
-}
+	public void setObservacoes(String observacoes) {
+		this.observacoes = observacoes;
+	}
+	
+	public String getObservacoes() {
+		return observacoes;
+	}
 
-public void setPreco(Double preco) {
-	this.preco = preco;
-}
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
 }
