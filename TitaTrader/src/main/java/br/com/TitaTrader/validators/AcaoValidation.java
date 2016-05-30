@@ -23,8 +23,8 @@ public class AcaoValidation implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmpty(errors, "titulo", "field.required");
-		ValidationUtils.rejectIfEmpty(errors, "descricao", "field.required");
+		ValidationUtils.rejectIfEmpty(errors, "nome", "field.required");
+		ValidationUtils.rejectIfEmpty(errors, "observacao", "field.required");
 
 		Acao acao = (Acao) target;
 
