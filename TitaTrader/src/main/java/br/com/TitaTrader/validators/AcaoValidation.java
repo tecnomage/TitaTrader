@@ -16,6 +16,7 @@ public class AcaoValidation implements Validator {
 
 	}
 
+	
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return Acao.class.isAssignableFrom(clazz);
@@ -27,8 +28,8 @@ public class AcaoValidation implements Validator {
 		ValidationUtils.rejectIfEmpty(errors, "observacao", "field.required");
 
 		Acao acao = (Acao) target;
-
-		if (acao.getPreco() <= 0) {
+		//FIXME qndo deixa null dá erro
+		if (acao.getPreco()<= 0 || acao.getPreco()==null) {
 			errors.rejectValue("preco", "field.required");
 		}
 

@@ -37,12 +37,12 @@ public class AcaoController {
 
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView gravar(Acao acao, BindingResult result) {
+	public ModelAndView gravar(@Valid Acao acao, BindingResult result) {
 		
 
-//		if (result.hasErrors()) {
-//			return form(acao);
-//		}
+		if (result.hasErrors()) {
+			return form(acao);
+		}
 		
 		System.out.println(acao.toString());
 		ModelAndView mv = new ModelAndView("redirect:/");

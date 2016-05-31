@@ -21,32 +21,36 @@
 		<h2>Cadastro de Ações</h2>
 
 
-		<form action="${s:mvcUrl('AC#gravar').build()}" method="POST"
-			commandName="acao" class="form-horizontal" >
-			
+		<form:form action="${s:mvcUrl('AC#gravar').build()}" method="POST"
+			commandName="acao" class="form-horizontal">
+
 			<div class="form-group">
-				  <label class="control-label col-sm-2" for="nome">Nome:</label>
+				<label class="control-label col-sm-2" for="nome">Nome:</label>
+
 				<div class="col-sm-5">
 					<input type="text" name="nome" class="form-control"
 						cssClass="form-control" placeholder="Nome da Ação" />
+					<form:errors path="nome" />
 				</div>
 			</div>
 
 			<div class="form-group">
-				 <label class="control-label col-sm-2" for="observacao">Observações:</label>
+				<label class="control-label col-sm-2" for="observacao">Observações:</label>
 				<div class="col-sm-5">
-					<input type="text" name="observacao" class="form-control" 
+					<input type="text" name="observacao" class="form-control"
 						placeholder="Observações" />
+				<form:errors path="observacao" />		
 				</div>
 			</div>
 
 
 			<div class="form-group">
-				 <label class="control-label col-sm-2" for="pwd">Preço de
+				<label class="control-label col-sm-2" for="pwd">Preço de
 					Compra:</label>
-				<div class="col-sm-5">
+					<div class="col-sm-5">
 					<input type="number" class="form-control" name="preco"
-						placeholder="Informe o preço de compra">
+						placeholder="Informe o preço de compra"/>
+						<form:errors path="preco" />
 				</div>
 			</div>
 
@@ -63,7 +67,7 @@
 					<button type="submit" class="btn btn-primary">Cadastrar</button>
 				</div>
 			</div>
-		</form>
+		</form:form>
 	</div>
 	<div class="checkbox">
 		<label> <input type="checkbox" value="ativa"> Ação
