@@ -37,14 +37,15 @@ public class AcaoController {
 
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView gravar(@Valid Acao acao, BindingResult result) {
+	public ModelAndView gravar(Acao acao, BindingResult result) {
 		
 
-		if (result.hasErrors()) {
-			return form(acao);
-		}
+//		if (result.hasErrors()) {
+//			return form(acao);
+//		}
 		
-		ModelAndView mv = new ModelAndView("/TitaTrader");
+		System.out.println(acao.toString());
+		ModelAndView mv = new ModelAndView("redirect:/");
 		System.out.println("acessando o gravar");
 		
 		acaoDao.save(acao);

@@ -14,41 +14,42 @@
 
 <!-- header -->
 <%@include file="/WEB-INF/views/templates/header.jsp"%>
-
+</head>
 
 <body>
 	<div class="container">
 		<h2>Cadastro de Ações</h2>
-		
-		
-		<form:form class="form-horizontal" role="form" action="${s:mvcUrl('AC#gravar').build()}"
-		method="POST" commandName="acao" enctype="multipart/form-data">
+
+
+		<form action="${s:mvcUrl('AC#gravar').build()}" method="POST"
+			commandName="acao" class="form-horizontal" >
+			
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="email">Nome:</label>
+				  <label class="control-label col-sm-2" for="nome">Nome:</label>
 				<div class="col-sm-5">
-					<form:input type="text" class="form-control" path="nome"
-						placeholder="Nome da Ação"/>
+					<input type="text" name="nome" class="form-control"
+						cssClass="form-control" placeholder="Nome da Ação" />
 				</div>
 			</div>
-			
+
 			<div class="form-group">
-			<label class="control-label col-sm-2" for="observacoes">Observações:</label>
-			<div class="col-sm-5">
-				<form:input type="text" class="form-control" path="observacoes"
-					placeholder="Observações"/>
+				 <label class="control-label col-sm-2" for="observacao">Observações:</label>
+				<div class="col-sm-5">
+					<input type="text" name="observacao" class="form-control" 
+						placeholder="Observações" />
+				</div>
 			</div>
-			</div>
-			
-			
+
+
 			<div class="form-group">
-				<label class="control-label col-sm-2" for="pwd">Preço de
+				 <label class="control-label col-sm-2" for="pwd">Preço de
 					Compra:</label>
 				<div class="col-sm-5">
-					<input type="number" class="form-control" id="preco"
+					<input type="number" class="form-control" name="preco"
 						placeholder="Informe o preço de compra">
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<div class="checkbox">
@@ -56,13 +57,13 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Cadastrar</button>
+					<button type="submit" class="btn btn-primary">Cadastrar</button>
 				</div>
 			</div>
-		</form:form>
+		</form>
 	</div>
 	<div class="checkbox">
 		<label> <input type="checkbox" value="ativa"> Ação
@@ -82,3 +83,4 @@
 
 <!-- footer -->
 <%@include file="/WEB-INF/views/templates/footer.jsp"%>
+</html>
