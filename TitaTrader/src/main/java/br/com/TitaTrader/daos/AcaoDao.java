@@ -19,7 +19,7 @@ public class AcaoDao {
 	private EntityManager manager;
 
 	public List<Acao> all() {
-		return manager.createQuery("select c from Category c", Acao.class).getResultList();
+		return manager.createQuery("select a from Acao a", Acao.class).getResultList();
 	}
 
 	public void save(Acao acao) {

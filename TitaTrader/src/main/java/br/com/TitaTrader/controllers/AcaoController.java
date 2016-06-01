@@ -1,5 +1,7 @@
 package br.com.TitaTrader.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +32,11 @@ public class AcaoController {
 	@RequestMapping("/listar")
 	public ModelAndView lista() {
 
+		List<Acao> acoes = acaoDao.all();
 		ModelAndView mv = new ModelAndView("acao/listar");
+		
+		mv.addObject("acoes", acoes);
+		
 		System.out.println("acessando mv do listar");
 		return mv;
 	}

@@ -35,16 +35,18 @@
 	                  </tr>
                   </thead>
                   <tbody>
-                  <c:forEach items='${paginatedList.currentList}'
-								var='object'>         		
+                  <!-- '${paginatedList.currentList}' -->
+                  
+                  <c:forEach items="${acoes}"
+								var='acao'>         		
 	                  <tr>
-						<td><a href="<c:url value='/category'/>/${acao.id}">${acao.id}</a></td>
+						<td><a href="<c:url value='acao'/>/${acao.id}">${acao.id}</a></td>
 		                  	<td>${acao.nome}</td>
-		                  	<td>${acao.descricao}</td>
-		                  	<td>${acao.precoCompra}</td>
-		                  	<td>${acao.precoDesejado}</td>
+		                  	<td>${acao.observacao}</td>
+		                  	<td>${acao.preco}</td>
+		                  	<td>${acao.preco}</td>
 	                    <td>
-									<a href="<c:url value='/category/remove'/>/${object.id}">Remove</a>
+									<a href="<c:url value='/category/remove'/>/${acao.id}">Remove</a>
 									</td>
 					  
 								</tr>
