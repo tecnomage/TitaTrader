@@ -27,10 +27,10 @@
 	                  <tr>
 	                  	<td>id</td>
 		                  	<td>nome</td>
-		                  	<td>descrição</td>
+		                  	<td>Observação</td>
 							<td>Preço de compra</td>
 							<td>Preço desejado</td>
-							<td>Observações</td>
+							<td>Remover</td>
 							
 	                  </tr>
                   </thead>
@@ -46,7 +46,7 @@
 		                  	<td>${acao.preco}</td>
 		                  	<td>${acao.preco}</td>
 	                    <td>
-									<a href="<c:url value='/category/remove'/>/${acao.id}">Remove</a>
+									<a href="${s:mvcUrl('AC#detalhe').arg(0,acao.id).build()}">Editar</a>
 									</td>
 					  
 								</tr>

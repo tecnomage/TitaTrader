@@ -28,7 +28,7 @@
 <!-- endinject -->
 <link rel="canonical"
 	href="http://www.casadocodigo.com.br/products/livro-javaee" />
-<title>${produto.titulo}-Casa do Código</title>
+<title>${acao.nome}-Casa do Código</title>
 </head>
 <body>
 	<style scoped="scoped">
@@ -72,12 +72,12 @@
 		</ul>
 	</div>
 
-	<article id="${produto.id}" itemscope>
+	<article id="${acao.id}" itemscope>
 		<section class="conteudoDoLivro infoSection" itemprop="description">
 			<div class="cabecalhoProduto-tituloEAutor">
 				<h1 itemprop="name" class="cabecalhoProduto-titulo">
 					<span class="cabecalhoProduto-titulo-principal" role="presentation">
-						${produto.titulo} </span>
+						${acao.nome} </span>
 				</h1>
 			</div>
 
@@ -148,7 +148,7 @@
 				class="adicionarAoCarrinho">
 				<ul class="adicionarAoCarrinho-listaOfertas">
 
-					<input type="hidden" value="${produto.id}" name="produtoId" />
+					<input type="hidden" value="${acao.id}" name="produtoId" />
 					<c:forEach items="${produto.precos}" var="preco">
 						<li class="adicionarAoCarrinho-oferta" itemprop="offers" itemscope>
 							<label class="adicionarAoCarrinho-infosDaOferta"
