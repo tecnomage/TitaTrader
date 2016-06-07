@@ -34,8 +34,8 @@ public class AcaoDao {
 		manager.remove(category);
 	}
 
-	public void update(Acao category) {
-		manager.merge(category);
+	public void update(Acao acao) {
+		manager.merge(acao);
 	}
 
 	public PaginatedList paginated(int page, int max) {

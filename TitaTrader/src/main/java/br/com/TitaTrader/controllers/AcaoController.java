@@ -67,12 +67,32 @@ public class AcaoController {
 
 	@RequestMapping("detalhe/{id}")
 	public ModelAndView detalhe(@PathVariable("id") Integer id) {
-		ModelAndView mv = new ModelAndView("acao/detalhe");
+		ModelAndView mv = new ModelAndView("acao/detalhe2");
 		
 		Acao acao= acaoDao.findById(id);
 		mv.addObject("acao", acao);
 
 		return mv;
 	}
+	
+	
+	//FIXME a view nao está chamando o controller
+	@RequestMapping("/atualizar")
+	public ModelAndView atualizar(@Valid Acao acao, BindingResult result) {
 
+			
+		
+		if (result.hasErrors()) 
+			return form(acao);
+		
+
+		
+		ModelAndView mv = new ModelAndView("redirect:/home");
+		System.out.println("acessando o gravar");
+
+		acaoDao.update(acao);
+
+		return mv;
+	}
+	
 }
