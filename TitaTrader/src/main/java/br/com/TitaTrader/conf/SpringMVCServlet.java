@@ -1,5 +1,8 @@
 package br.com.TitaTrader.conf;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletInitializer
@@ -14,7 +17,7 @@ public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletI
    @Override
    protected Class<?>[] getServletConfigClasses()
    {
-      return null;
+      return new Class[] {SecurityConfiguration.class};
    }
 
    @Override
@@ -23,4 +26,5 @@ public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletI
       return new String[] { "/" };
    }
 
+   
 }

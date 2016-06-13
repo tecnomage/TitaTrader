@@ -1,13 +1,13 @@
 package br.com.TitaTrader.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import java.math.BigDecimal;
-import br.com.TitaTrader.models.Acao;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Trader {
@@ -18,8 +18,8 @@ public class Trader {
 	private String name;
 	private String description;
 
-	@ManyToOne
-	private Acao acoes;
+	@OneToMany(mappedBy="trader")
+	private List<Acao> acoes;
 
 	public Integer getId() {
 		return this.id;
@@ -43,6 +43,14 @@ public class Trader {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Acao> getAcoes() {
+		return acoes;
+	}
+
+	public void setAcoes(List<Acao> acoes) {
+		this.acoes = acoes;
 	}
 
 }

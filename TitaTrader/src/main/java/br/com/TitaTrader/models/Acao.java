@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -20,6 +21,11 @@ public class Acao {
 	private String nome;
 	private String observacao;
 	private Double preco;
+	
+	@ManyToOne
+	private Trader trader;
+	
+	
 	
 	public Integer getId() {
 		return id;
@@ -45,6 +51,12 @@ public class Acao {
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
+	}
+	public Trader getTrader() {
+		return trader;
+	}
+	public void setTrader(Trader trader) {
+		this.trader = trader;
 	}
 	@Override
 	public String toString() {
