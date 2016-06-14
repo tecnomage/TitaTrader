@@ -23,7 +23,7 @@ public class TraderDao implements UserDetailsService {
 	private EntityManager manager;
 
 	public List<Trader> all() {
-		return manager.createQuery("select a from Acao a", Trader.class).getResultList();
+		return manager.createQuery("select a from Trader a", Trader.class).getResultList();
 	}
 
 	public void save(Trader trader) {
@@ -44,18 +44,18 @@ public class TraderDao implements UserDetailsService {
 
 	public PaginatedList paginated(int page, int max) {
 
-		return new PaginatorQueryHelper().list(manager, Acao.class, page, max);
+		return new PaginatorQueryHelper().list(manager, Trader.class, page, max);
 
 	}
 
 	@Override
-	public Trader loadUserByUsername(String nome) throws UsernameNotFoundException {
+	public Trader loadUserByUsername(String name) throws UsernameNotFoundException {
 		
-		List<Trader> trader = manager.createQuery("select t From Trader t" + " where t.nome = : nome", Trader.class)
-				.setParameter("nome", nome).getResultList();
+		List<Trader> trader = manager.createQuery("select t From Trader t" + " where t.nome = : name", Trader.class)
+				.setParameter("name", name).getResultList();
 
-		if (nome.isEmpty()) {
-			throw new UsernameNotFoundException("Usuario" + nome + "nao foi encontrado");
+		if (name.isEmpty()) {
+			throw new UsernameNotFoundException("Usuario" + name + "nao foi encontrado");
 		}
 		return trader.get(0);
 	}

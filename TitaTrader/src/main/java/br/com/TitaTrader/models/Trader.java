@@ -5,12 +5,14 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -28,7 +30,8 @@ public class Trader implements UserDetails {
 	@OneToMany(mappedBy="trader")
 	private List<Acao> acoes;
 	
-	
+	@Autowired
+	@OneToMany(fetch=FetchType.EAGER)
 	private List<Role> role = new ArrayList<>();
 
 	public Integer getId() {
