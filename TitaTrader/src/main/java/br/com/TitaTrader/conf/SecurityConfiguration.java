@@ -16,7 +16,7 @@
  import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import TraderDao;
+import br.com.TitaTrader.daos.TraderDao;
 import br.com.TitaTrader.models.Trader;
 
  @EnableWebSecurity
@@ -40,13 +40,13 @@ import br.com.TitaTrader.models.Trader;
  }
 
  @Autowired
- private TraderDao trader;
+ private TraderDao traderdao;
 
  @Override
  protected void configure(AuthenticationManagerBuilder auth)
  throws Exception
  {
- auth.userDetailsService(users).passwordEncoder(new BCryptPasswordEncoder());
+ auth.userDetailsService(traderdao).passwordEncoder(new BCryptPasswordEncoder());
  }
 
  @Override
