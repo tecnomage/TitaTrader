@@ -15,9 +15,18 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import br.com.TitaTrader.controllers.AcaoController;
+import br.com.TitaTrader.controllers.HomeController;
+import br.com.TitaTrader.daos.AcaoDao;
+import br.com.TitaTrader.daos.TraderDao;
+import br.com.TitaTrader.models.Acao;
+import br.com.TitaTrader.models.Trader;
+
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "br.com.TitaTrader")
+@ComponentScan(basePackages = {"br.com.TitaTrader"})
+//@ComponentScan(basePackageClasses={HomeController.class,AcaoController.class,TraderDao.class,
+//		Trader.class,Acao.class,AcaoDao.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override

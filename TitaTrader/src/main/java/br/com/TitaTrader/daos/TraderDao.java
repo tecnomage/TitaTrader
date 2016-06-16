@@ -5,53 +5,23 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import br.com.TitaTrader.models.PaginatedList;
 import br.com.TitaTrader.models.Trader;
-import br.com.TitaTrader.models.Acao;
 
-@Repository
-@Transactional
+@Component
 public class TraderDao implements UserDetailsService {
 
 	@PersistenceContext
 	private EntityManager manager;
 
-	public List<Trader> all() {
-		return manager.createQuery("select a from Trader a", Trader.class).getResultList();
-	}
-
-	public void save(Trader trader) {
-		manager.persist(trader);
-	}
-
-	public Trader findById(Integer id) {
-		return manager.find(Trader.class, id);
-	}
-
-	public void remove(Trader trader) {
-		manager.remove(trader);
-	}
-
-	public void update(Trader trader) {
-		manager.merge(trader);
-	}
-
-	public PaginatedList paginated(int page, int max) {
-
-		return new PaginatorQueryHelper().list(manager, Trader.class, page, max);
-
-	}
-
 	@Override
 	public Trader loadUserByUsername(String name) throws UsernameNotFoundException {
-		
-		List<Trader> trader = manager.createQuery("select t From Trader t" + " where t.nome = : name", Trader.class)
+
+		List<Trader> trader = manager.createQuery("select t From Trader t" + " where t.name = :name", Trader.class)
 				.setParameter("name", name).getResultList();
 
 		if (name.isEmpty()) {
@@ -59,4 +29,5 @@ public class TraderDao implements UserDetailsService {
 		}
 		return trader.get(0);
 	}
+
 }

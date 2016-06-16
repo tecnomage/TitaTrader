@@ -5,26 +5,24 @@ import javax.servlet.ServletException;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletInitializer
-{
+import br.com.TitaTrader.daos.TraderDao;
+import br.com.TitaTrader.models.Trader;
 
-   @Override
-   protected Class<?>[] getRootConfigClasses()
-   {
-      return new Class[] {AppWebConfiguration.class , JPAConfiguration.class };
-   }
+public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-   @Override
-   protected Class<?>[] getServletConfigClasses()
-   {
-      return new Class[] {SecurityConfiguration.class};
-   }
+	@Override
+	protected Class<?>[] getRootConfigClasses() {
+		return new Class[] {SecurityConfiguration.class, AppWebConfiguration.class, JPAConfiguration.class, };
+	}
 
-   @Override
-   protected String[] getServletMappings()
-   {
-      return new String[] { "/" };
-   }
+	@Override
+	protected Class<?>[] getServletConfigClasses() {
+		return new Class[] {};
+	}
 
-   
+	@Override
+	protected String[] getServletMappings() {
+		return new String[] { "/" };
+	}
+
 }

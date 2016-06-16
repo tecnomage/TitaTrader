@@ -11,7 +11,7 @@ import javassist.SerialVersionUID;
 public class Role implements GrantedAuthority {
 
 
-	//private static final long SerialVersionUID = 1L;
+	private static final long SerialVersionUID = 1L;
 	
 	@Id
 	private String nome;

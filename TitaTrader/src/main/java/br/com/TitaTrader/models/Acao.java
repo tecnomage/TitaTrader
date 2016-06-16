@@ -25,8 +25,6 @@ public class Acao {
 	@ManyToOne
 	private Trader trader;
 	
-	
-	
 	public Integer getId() {
 		return id;
 	}
