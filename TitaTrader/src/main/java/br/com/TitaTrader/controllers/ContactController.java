@@ -8,7 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/contact")
 public class ContactController {
 
+	@RequestMapping
 	public ModelAndView Contact() {
+		System.out.println("acessando contact");
 		ModelAndView mv = new ModelAndView("contact");
 		
 		return mv;
