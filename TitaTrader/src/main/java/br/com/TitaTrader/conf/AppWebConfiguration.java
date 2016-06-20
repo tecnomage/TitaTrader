@@ -25,8 +25,6 @@ import br.com.TitaTrader.models.Trader;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {"br.com.TitaTrader"})
-//@ComponentScan(basePackageClasses={HomeController.class,AcaoController.class,TraderDao.class,
-//		Trader.class,Acao.class,AcaoDao.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override

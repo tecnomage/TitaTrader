@@ -53,7 +53,7 @@ body {
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="/TitaTrader/">Home</a></li>
 				<li><a href="about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="contact">Contact</a></li>
 				<li><a href="acao/listar">Acoes</a></li>
 				<li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></a>

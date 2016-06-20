@@ -16,7 +16,7 @@ import br.com.TitaTrader.daos.TraderDao;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	//FIXME nao está conseguindo carregar a dependencia.
+
 	@Autowired
 	private TraderDao traderDao;
 	
@@ -37,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		// you can change
+		//you can change
 		web.ignoring().antMatchers("/resources/**");
 	}
 
