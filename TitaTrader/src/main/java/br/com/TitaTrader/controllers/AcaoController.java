@@ -42,30 +42,28 @@ public class AcaoController {
 		return mv;
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/gravar", method = RequestMethod.POST)
 	public ModelAndView gravar(@Valid Acao acao, BindingResult result) {
 
 		if (result.hasErrors()) {
 			return form(acao);
 		}
 
-		System.out.println(acao.toString());
 		ModelAndView mv = new ModelAndView("redirect:/");
-		System.out.println("acessando o gravar");
 
 		acaoDao.save(acao);
 
 		return mv;
 	}
 
-	@RequestMapping("/form")
+	@RequestMapping("acao/form")
 	public ModelAndView form(Acao acao) {
 		ModelAndView mv = new ModelAndView("acao/form");
 		System.out.println("acessando o form");
 		return mv;
 	}
 
-	@RequestMapping("detalhe/{id}")
+	@RequestMapping("acao/detalhe/{id}")
 	public ModelAndView detalhe(@PathVariable("id") Integer id) {
 		ModelAndView mv = new ModelAndView("acao/detalhe2");
 
@@ -75,8 +73,7 @@ public class AcaoController {
 		return mv;
 	}
 
-	// FIXME a view nao está chamando o controller
-	@RequestMapping("/atualizar")
+	@RequestMapping("acao/atualizar")
 	public ModelAndView atualizar(@Valid Acao acao, BindingResult result) {
 
 		if (result.hasErrors())

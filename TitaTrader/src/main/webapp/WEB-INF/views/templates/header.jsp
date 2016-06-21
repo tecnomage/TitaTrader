@@ -3,6 +3,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <c:url value="/" var="contextPath" />
 <meta charset="utf-8">
@@ -52,14 +55,15 @@ body {
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="/TitaTrader/">Home</a></li>
-				<li><a href="about">About</a></li>
-				<li><a href="contact">Contact</a></li>
-				<li><a href="acao/listar">Acoes</a></li>
+				<li><a href="/TitaTrader/about">About</a></li>
+				<li><a href="/TitaTrader/contact">Contact</a></li>
+				<li><a href="/TitaTrader/acao/listar">Acoes</a></li>
 				<li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown <span class="caret"></span></a>
                           <ul class="dropdown-menu">
-                            <li><a href="#">Listar Acões</a></li>
-                            <li><a href="#">Incluir Acao</a></li>
+                            <li><a href="acao/listar">Listar Acões</a></li>
+                            <li><a href="acao/form">Incluir Acao</a></li>
+                            <li><a href="/TitaTrader/trader/form">Cadastre-se</a></li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
                             <li><a href="#">Separated link</a></li>

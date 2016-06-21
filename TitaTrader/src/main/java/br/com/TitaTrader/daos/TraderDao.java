@@ -29,4 +29,10 @@ public class TraderDao implements UserDetailsService {
 		return trader.get(0);
 	}
 
+
+	public void gravar(Trader trader) {
+		manager.persist(trader);
+
+	}
+
 }

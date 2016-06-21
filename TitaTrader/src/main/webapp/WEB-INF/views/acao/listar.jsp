@@ -6,8 +6,11 @@
 
 
 <!-- header -->
+<head>
 <%@include file="/WEB-INF/views/templates/header.jsp"%>
+</head>
 
+<body>
 <template:admin>
 	<jsp:attribute name="extraStyles">
 <link rel="stylesheet"
@@ -65,3 +68,4 @@
 
 	<!-- Footer -->
   <%@include file="/WEB-INF/views/templates/footer.jsp"%>
+  </body>
