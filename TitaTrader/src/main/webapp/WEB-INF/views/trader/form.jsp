@@ -18,7 +18,7 @@
 
 <body>
 	<div class="container">
-		<h2>Cadastro de Ações</h2>
+		<h2>Cadastro</h2>
 
 
 		<form:form action="${s:mvcUrl('TC#gravar').build()}" method="POST"
@@ -29,17 +29,17 @@
 
 				<div class="col-sm-5">
 					<input type="text" name="nome" class="form-control"
-						cssClass="form-control" placeholder="Nome da Ação" />
+						cssClass="form-control" placeholder="Nome de Usuário" />
 					<form:errors path="nome" />
 				</div>
 			</div>
 
 
-			<label class="control-label col-sm-2" for="nome">Nome:</label>
+			<label class="control-label col-sm-2" for="nome">Senha:</label>
 
 			<div class="col-sm-5">
 				<input type="password" name="senha" class="form-control"
-					cssClass="form-control" placeholder="Nome da Ação" />
+					cssClass="form-control" placeholder="senha" />
 				<form:errors path="senha" />
 			</div>
 	</div>

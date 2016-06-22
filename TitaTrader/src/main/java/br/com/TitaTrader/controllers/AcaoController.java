@@ -56,14 +56,14 @@ public class AcaoController {
 		return mv;
 	}
 
-	@RequestMapping("acao/form")
+	@RequestMapping("/form")
 	public ModelAndView form(Acao acao) {
 		ModelAndView mv = new ModelAndView("acao/form");
 		System.out.println("acessando o form");
 		return mv;
 	}
 
-	@RequestMapping("acao/detalhe/{id}")
+	@RequestMapping("/detalhe/{id}")
 	public ModelAndView detalhe(@PathVariable("id") Integer id) {
 		ModelAndView mv = new ModelAndView("acao/detalhe2");
 
@@ -73,7 +73,7 @@ public class AcaoController {
 		return mv;
 	}
 
-	@RequestMapping("acao/atualizar")
+	@RequestMapping("/atualizar")
 	public ModelAndView atualizar(@Valid Acao acao, BindingResult result) {
 
 		if (result.hasErrors())

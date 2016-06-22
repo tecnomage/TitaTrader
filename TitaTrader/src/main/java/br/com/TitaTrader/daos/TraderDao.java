@@ -8,10 +8,12 @@ import javax.persistence.PersistenceContext;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.TitaTrader.models.Trader;
 
 @Component
+@Transactional
 public class TraderDao implements UserDetailsService {
 
 	@PersistenceContext

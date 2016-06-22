@@ -11,21 +11,21 @@
 </head>
 
 <body>
-<template:admin>
-	<jsp:attribute name="extraStyles">
+	<template:admin>
+		<jsp:attribute name="extraStyles">
 <link rel="stylesheet"
-			href="<c:url value='/assets/css/pagination/jqpagination.css'/>" />
+				href="<c:url value='/assets/css/pagination/jqpagination.css'/>" />
 </jsp:attribute>
-	<jsp:attribute name="extraScripts">
+		<jsp:attribute name="extraScripts">
 <script src="<c:url value='/assets/js/jquery.jqpagination.js'/>"></script>
 </jsp:attribute>
-	<jsp:body>
+		<jsp:body>
   <div>
     <div class="container min-container">
       <h2 class="basic-title">Listagem de Açoes</h2>
         <div class="well">
           <table
-						class="table table-condensed table-bordered table-striped table-hover">
+							class="table table-condensed table-bordered table-striped table-hover">
           		  <thead>
 	                  <tr>
 	                  	<td>id</td>
@@ -40,8 +40,7 @@
                   <tbody>
                   <!-- '${paginatedList.currentList}' -->
                   
-                  <c:forEach items="${acoes}"
-								var='acao'>         		
+                  <c:forEach items="${acoes}" var='acao'>         		
 	                  <tr>
 						<td><a href="<c:url value='acao'/>/${acao.id}">${acao.id}</a></td>
 		                  	<td>${acao.nome}</td>
@@ -57,15 +56,17 @@
                   </tbody>
           </table>
 		  <template:paginationComponent paginatedList="${paginatedList}"
-						page="${param.page}" action="/category" />
+							page="${param.page}" action="/category" />
           <a href="${s:mvcUrl('AC#form').build()}"> Cadastro de Acoes
- 						<class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span> Add New</a>
+ 						<class ="btnbtn-success">
+							<span class="glyphicon glyphicon-plus-sign"></span> Add New
+						</a>
         </div>
     </div>
   </div>
 </jsp:body>
-</template:admin>
+	</template:admin>
 
 	<!-- Footer -->
-  <%@include file="/WEB-INF/views/templates/footer.jsp"%>
-  </body>
+	<%@include file="/WEB-INF/views/templates/footer.jsp"%>
+</body>

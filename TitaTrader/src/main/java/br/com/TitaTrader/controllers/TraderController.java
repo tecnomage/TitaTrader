@@ -1,3 +1,4 @@
+package br.com.TitaTrader.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,9 +8,10 @@ import br.com.TitaTrader.daos.TraderDao;
 import br.com.TitaTrader.models.Trader;
 
 
-//@RequestMapping("/trader")
+@RequestMapping("/trader")
+@Controller
 public class TraderController {
-
+//FIXME nao está acessando o controller
 	@Autowired
 	private TraderDao traderDao;
 
@@ -25,7 +27,7 @@ public class TraderController {
 
 	@RequestMapping("/form")
 	public ModelAndView form() {
-		ModelAndView mv = new ModelAndView("/cadastro");
+		ModelAndView mv = new ModelAndView("/trader/form");
 		System.out.println("acessando o form");
 		return mv;
 
