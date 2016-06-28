@@ -4,15 +4,15 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Repository;
 
 import br.com.TitaTrader.models.Trader;
 
-@Component
+@Repository
 @Transactional
 public class TraderDao implements UserDetailsService {
 
@@ -30,7 +30,6 @@ public class TraderDao implements UserDetailsService {
 		}
 		return trader.get(0);
 	}
-
 
 	public void gravar(Trader trader) {
 		manager.persist(trader);
