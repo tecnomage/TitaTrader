@@ -2,20 +2,22 @@ package br.com.TitaTrader.daos;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
+import br.com.TitaTrader.models.Acao;
+import br.com.TitaTrader.models.Trader;
 
-@Transactional
 @Repository
-public class TraderDaoData {
-	
+@Transactional
+public class TraderDao2 {
+
 	@PersistenceContext
 	public EntityManager manager;
 
-	public TraderDaoData() {
+	public void save(Trader trader) {
+		manager.persist(trader);
 	}
-	
-	
+
 }

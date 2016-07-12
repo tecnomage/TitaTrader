@@ -9,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +27,9 @@ public class Trader implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String name;
+	private String nome;
 	private String senha;
-	private String description;
+	private String observacao;
 	
 
 	@OneToMany(mappedBy="trader")
@@ -47,29 +46,13 @@ public class Trader implements UserDetails {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public String getName() {
-		return this.name;
+	
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public List<Acao> getAcoes() {
-		return acoes;
-	}
-
-	public void setAcoes(List<Acao> acoes) {
-		this.acoes = acoes;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getSenha() {
@@ -80,6 +63,23 @@ public class Trader implements UserDetails {
 		this.senha = senha;
 	}
 
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public List<Acao> getAcoes() {
+		return acoes;
+	}
+
+	public void setAcoes(List<Acao> acoes) {
+		this.acoes = acoes;
+	}
+
+	
 	public List<Role> getRole() {
 		return role;
 	}
@@ -100,7 +100,7 @@ public class Trader implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return this.name;
+		return this.nome;
 	}
 
 	@Override

@@ -1,12 +1,6 @@
 package br.com.TitaTrader.conf;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
-import br.com.TitaTrader.daos.TraderDao;
-import br.com.TitaTrader.models.Trader;
 
 public class SpringMVCServlet extends AbstractAnnotationConfigDispatcherServletInitializer {
 

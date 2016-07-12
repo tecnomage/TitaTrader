@@ -1,25 +1,32 @@
 package br.com.TitaTrader.controllers;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.TitaTrader.daos.TraderDao;
 import br.com.TitaTrader.models.Trader;
+import br.com.TitaTrader.models.TraderDao;
 
 
 @RequestMapping("/trader")
 @Controller
 public class TraderController {
-//FIXME nao está acessando o controller
+	// FIXME nao está acessando o controller
+
+	// FIXME TraderDao nao está inserindo
 	@Autowired
 	private TraderDao traderDao;
 
+	@Transactional
 	@RequestMapping("/gravar")
 	public ModelAndView gravar(Trader trader) {
 
 		ModelAndView mv = new ModelAndView("/");
-
+		
+		trader.toString();
+		
 		traderDao.gravar(trader);
 
 		return mv;
