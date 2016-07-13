@@ -13,9 +13,7 @@ import br.com.TitaTrader.models.TraderDao;
 @RequestMapping("/trader")
 @Controller
 public class TraderController {
-	// FIXME nao está acessando o controller
-
-	// FIXME TraderDao nao está inserindo
+	
 	@Autowired
 	private TraderDao traderDao;
 

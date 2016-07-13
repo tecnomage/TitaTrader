@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.TitaTrader.daos.AcaoDao;
 import br.com.TitaTrader.models.Acao;
+import br.com.TitaTrader.models.Trader;
 import br.com.TitaTrader.validators.AcaoValidation;;
 
 @Controller
@@ -47,8 +49,13 @@ public class AcaoController {
 
 		if (result.hasErrors()) {
 			return form(acao);
-		}
-
+	}
+		
+		Trader trader= (Trader)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		acao.setTrader(trader);
+		
+		System.out.println(acao.getTrader()); 
+		
 		ModelAndView mv = new ModelAndView("redirect:/");
 
 		acaoDao.save(acao);

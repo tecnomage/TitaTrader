@@ -17,41 +17,42 @@
 </head>
 
 <body>
-	<div class="container">
-		<h2>Cadastro</h2>
+	<security:authorize access="isAuthenticated()">
+		<div class="container">
+			<h2>Cadastro</h2>
 
 
-		<form:form action="${s:mvcUrl('TC#gravar').build()}" method="POST"
-			commandName="trader" class="form-horizontal">
+			<form:form action="${s:mvcUrl('TC#gravar').build()}" method="POST"
+				commandName="trader" class="form-horizontal">
 
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="nome">Nome:</label>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="nome">Nome:</label>
+
+					<div class="col-sm-5">
+						<input type="text" name="nome" class="form-control"
+							cssClass="form-control" placeholder="Nome de Usuário" />
+						<form:errors path="nome" />
+					</div>
+				</div>
+
+
+				<label class="control-label col-sm-2" for="nome">Senha:</label>
 
 				<div class="col-sm-5">
-					<input type="text" name="nome" class="form-control"
-						cssClass="form-control" placeholder="Nome de Usuário" />
-					<form:errors path="nome" />
+					<input type="password" name="senha" class="form-control"
+						cssClass="form-control" placeholder="senha" />
+					<form:errors path="senha" />
 				</div>
-			</div>
-
-
-			<label class="control-label col-sm-2" for="nome">Senha:</label>
-
-			<div class="col-sm-5">
-				<input type="password" name="senha" class="form-control"
-					cssClass="form-control" placeholder="senha" />
-				<form:errors path="senha" />
-			</div>
-	</div>
-
-	<div class="form-group">
-		<div class="col-sm-offset-2 col-sm-10">
-			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</div>
-	</div>
-	</form:form>
-	</div>
 
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-primary">Cadastrar</button>
+			</div>
+		</div>
+		</form:form>
+		</div>
+	</security:authorize>
 </body>
 
 

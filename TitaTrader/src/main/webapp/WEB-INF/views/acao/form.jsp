@@ -4,7 +4,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!-- a tag s é usada para nao quebrar o form durante o deply -->
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +20,7 @@
 </head>
 
 <body>
+
 	<div class="container">
 		<h2>Cadastro de Ações</h2>
 
@@ -39,7 +43,7 @@
 				<div class="col-sm-5">
 					<input type="text" name="observacao" class="form-control"
 						placeholder="Observações" />
-				<form:errors path="observacao" />		
+					<form:errors path="observacao" />
 				</div>
 			</div>
 
@@ -47,10 +51,10 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="pwd">Preço de
 					Compra:</label>
-					<div class="col-sm-5">
+				<div class="col-sm-5">
 					<input type="number" class="form-control" name="preco"
-						placeholder="Informe o preço de compra"/>
-						<form:errors path="preco" />
+						placeholder="Informe o preço de compra" />
+					<form:errors path="preco" />
 				</div>
 			</div>
 
@@ -68,6 +72,7 @@
 				</div>
 			</div>
 		</form:form>
+
 	</div>
 	<div class="checkbox">
 		<label> <input type="checkbox" value="ativa"> Ação

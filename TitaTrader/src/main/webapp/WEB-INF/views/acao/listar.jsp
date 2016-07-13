@@ -37,9 +37,11 @@
 							
 	                  </tr>
                   </thead>
+                  
                   <tbody>
                   <!-- '${paginatedList.currentList}' -->
                   
+                  <security:authorize access="isAuthenticated()">
                   <c:forEach items="${acoes}" var='acao'>         		
 	                  <tr>
 						<td><a href="<c:url value='acao'/>/${acao.id}">${acao.id}</a></td>
@@ -53,18 +55,25 @@
 					  
 								</tr>
                   </c:forEach>
+                  </security:authorize>
                   </tbody>
-          </table>
+          
+						</table>
 		  <template:paginationComponent paginatedList="${paginatedList}"
 							page="${param.page}" action="/category" />
           <a href="${s:mvcUrl('AC#form').build()}"> Cadastro de Acoes
- 						<class ="btnbtn-success">
+ 						<class="btnbtn-success">
 							<span class="glyphicon glyphicon-plus-sign"></span> Add New
+						
+						
+						
 						</a>
         </div>
     </div>
   </div>
+
 </jsp:body>
+
 	</template:admin>
 
 	<!-- Footer -->
